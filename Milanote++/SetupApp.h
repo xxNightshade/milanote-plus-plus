@@ -1,6 +1,7 @@
 // SetupApp.h - the window people see when they double-click Milanote++.exe:
 // sign in to Milanote, connect Claude Desktop / Claude Code, test the connection.
-// It also watches Claude Desktop and blacks the window out while it is not running.
+// It also watches Claude Desktop and blacks the window out while it is not running, and keeps the
+// "connected" line current while Claude starts and stops the MCP server.
 #pragma once
 
 #include "framework.h"
@@ -56,6 +57,7 @@ private:
 
     ClaudeDesktopInstall claude_;
     bool claudeRunning_ = false;
+    bool serverRunning_ = false;     // a Milanote++ MCP server is alive (ServerLock.h), as of the last watch tick
     bool claudeChecked_ = false;
     bool blackoutSkipped_ = false;   // "I use Claude Code" - until the window is closed
     std::string claudeError_;

@@ -173,15 +173,23 @@ void SetupApp::PollLogin() {
 // ---------------------------------------------------------------- Claude Desktop watch / blackout
 void SetupApp::WatchClaude(bool force) {
     bool running = IsClaudeDesktopRunning();
+    bool server = IsServerRunning();
     bool changed = !claudeChecked_ || running != claudeRunning_;
+    bool serverChanged = claudeChecked_ && server != serverRunning_;
     claudeChecked_ = true;
     claudeRunning_ = running;
+    serverRunning_ = server;
     if (changed) {
         LogInfo(std::string("Claude Desktop is ") + (running ? "running" : "not running"));
         if (running) claudeError_.clear();
         else claude_ = FindClaudeDesktop();   // it may have been installed or removed meanwhile
     }
+    if (serverChanged) LogInfo(std::string("Milanote++ MCP server ") + (server ? "started" : "stopped"));
     if (changed || force) SendClaudeStatus();
+    // The setup page's "connected" / "restart Claude Desktop to connect" line is only built from the status
+    // message, so refresh it when either fact changes - it then follows Claude starting or restarting the
+    // server without the page being reopened.
+    if (onSetupPage_ && (changed || serverChanged)) SendStatus(false);
 }
 
 void SetupApp::SendClaudeStatus() {

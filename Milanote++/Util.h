@@ -18,7 +18,7 @@
 namespace mn {
 
 constexpr const wchar_t* kAppName = L"Milanote++";
-constexpr const char* kVersion = "1.2.0";
+constexpr const char* kVersion = "1.2.1";
 constexpr const wchar_t* kMilanoteOrigin = L"https://app.milanote.com";
 constexpr const wchar_t* kMilanoteLoginUrl = L"https://app.milanote.com/login";
 // Lightweight same-origin document used as the host page for the API bridge: it is served by

@@ -367,7 +367,7 @@ int McpServer::Run() {
     _setmode(_fileno(stdout), _O_BINARY);
     Log::Instance().EnableStderr(true);
     ServerLock lock;   // tells the setup window that Claude is connected (released automatically on exit)
-    if (!lock.Held()) LogWarn("could not create the server lock file");
+    if (!lock.Held()) LogWarn("could not create the server-running signal (error " + std::to_string(GetLastError()) + ")");
     LogInfo(std::string("Milanote++ ") + kVersion + " MCP server starting (" + std::to_string(ToolDefinitions().size()) + " tools, "
         + std::to_string(PromptDefinitions().size()) + " prompts, " + std::to_string(TemplateSummaries().size()) + " templates)");
 
