@@ -1,0 +1,13 @@
+{"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "smoke-test", "version": "1.1"}}}
+{"jsonrpc": "2.0", "method": "notifications/initialized"}
+{"jsonrpc": "2.0", "id": 2, "method": "tools/list"}
+{"jsonrpc": "2.0", "id": 3, "method": "prompts/list"}
+{"jsonrpc": "2.0", "id": 4, "method": "prompts/get", "params": {"name": "gdd", "arguments": {"game": "Tic Tac Toe"}}}
+{"jsonrpc": "2.0", "id": 5, "method": "resources/list"}
+{"jsonrpc": "2.0", "id": 6, "method": "resources/templates/list"}
+{"jsonrpc": "2.0", "id": 7, "method": "resources/read", "params": {"uri": "milanote://guide"}}
+{"jsonrpc": "2.0", "id": 8, "method": "tools/call", "params": {"name": "milanote_whoami", "arguments": {}}}
+{"jsonrpc": "2.0", "id": 9, "method": "tools/call", "params": {"name": "milanote_templates", "arguments": {"name": "brainstorm"}}}
+{"jsonrpc": "2.0", "id": 10, "method": "tools/call", "params": {"name": "milanote_list_boards", "arguments": {"depth": 2}}}
+{"jsonrpc": "2.0", "id": 11, "method": "tools/call", "params": {"name": "milanote_export_board", "arguments": {}}}
+{"jsonrpc": "2.0", "id": 12, "method": "tools/call", "params": {"name": "milanote_search", "arguments": {"query": "Tic Tac Toe", "depth": 2}}}

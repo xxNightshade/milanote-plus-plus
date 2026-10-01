@@ -1,0 +1,304 @@
+{
+  "$comment": "Milanote++ prompt and template catalogue. Compiled into the exe as a resource; prompts appear in Claude Desktop's + menu and as /mcp__milanote__<name> commands in Claude Code. Placeholders: {{arg}} (prompt arguments / template variables), {{template:name}}, {{snippet:name}}.",
+  "prompts": [
+    {
+      "name": "gdd",
+      "title": "Game design document",
+      "description": "Write a complete Game Design Document as a Milanote board (overview, gameplay, content, presentation, technical, production, references).",
+      "arguments": [
+        {
+          "name": "game",
+          "description": "The game: name plus a one-line pitch",
+          "required": true
+        },
+        {
+          "name": "platform",
+          "description": "Target platform / engine (e.g. Roblox, Unity, Unreal, web)",
+          "required": false,
+          "default": "not specified — choose what fits the game and say so"
+        }
+      ],
+      "text": "Create a complete Game Design Document board in Milanote for this game:\n\n{{game}}\n\nPlatform / engine: {{platform}}\n\n{{snippet:workflow}}\n\nStructure to follow — this is the `gdd` template; every note below only describes what to write, replace all of it with real content for this game:\n\n{{template:gdd}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "character_sheet",
+      "title": "Character sheet",
+      "description": "Design a game character as a Milanote board: identity, visual design, gameplay role and stats, moveset, animations, production tasks.",
+      "arguments": [
+        {
+          "name": "character",
+          "description": "The character's name (and a line about them, if you have one)",
+          "required": true
+        },
+        {
+          "name": "game",
+          "description": "The game the character belongs to",
+          "required": false,
+          "default": "the user's current game"
+        }
+      ],
+      "text": "Create a character sheet board in Milanote for:\n\n{{character}}\n\nGame: {{game}}\n\n{{snippet:workflow}}\n\nStructure to follow — this is the `character_sheet` template; replace every descriptive note with real, specific content (real moves with real names, real stats relative to the roster):\n\n{{template:character_sheet}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "level_design",
+      "title": "Level design",
+      "description": "Design a level or arena as a Milanote board: purpose, layout and flow, encounters, art & audio, blockout tasks, playtest checklist.",
+      "arguments": [
+        {
+          "name": "level",
+          "description": "The level / arena name and its idea in one line",
+          "required": true
+        },
+        {
+          "name": "game",
+          "description": "The game it belongs to",
+          "required": false,
+          "default": "the user's current game"
+        }
+      ],
+      "text": "Create a level design board in Milanote for:\n\n{{level}}\n\nGame: {{game}}\n\n{{snippet:workflow}}\n\nStructure to follow — this is the `level_design` template; replace every descriptive note with the real design (named zones, concrete encounters, actual dimensions where you can):\n\n{{template:level_design}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "brainstorm",
+      "title": "Brainstorm",
+      "description": "Run a structured brainstorm on a topic and capture it as a Milanote board: ideas, questions, constraints, wild cards, next steps.",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "What to brainstorm",
+          "required": true
+        }
+      ],
+      "text": "Brainstorm this topic and capture the result as a Milanote board:\n\n{{topic}}\n\n{{snippet:workflow}}\n\nAim for 8–12 distinct ideas (one note each, with a one-line \"why it might work\"), 3–5 open questions, the real constraints, two wild cards (one too ambitious, one embarrassingly simple) and concrete next steps as a to-do list. Structure (the `brainstorm` template — replace the descriptive text):\n\n{{template:brainstorm}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "moodboard",
+      "title": "Mood board",
+      "description": "Build a mood board in Milanote for a visual theme: direction, colour & light, shapes & materials, reference links, do/don't.",
+      "arguments": [
+        {
+          "name": "theme",
+          "description": "The theme, project or scene the mood board is for",
+          "required": true
+        },
+        {
+          "name": "references",
+          "description": "Optional links the user already has (one per line)",
+          "required": false,
+          "default": "none given — add 4–6 well-known public reference pages (Wikipedia, museum, studio or product pages) whose URLs you are sure about"
+        }
+      ],
+      "text": "Build a mood board in Milanote for:\n\n{{theme}}\n\nReferences from the user: {{references}}\n\n{{snippet:workflow}}\n\nGive the direction in concrete terms (three adjectives, a hex palette, named materials and shapes) and put every reference in its own bare ### section as a URL with a short caption so Milanote shows a preview card. Structure (the `moodboard` template — replace the descriptive text):\n\n{{template:moodboard}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "project_plan",
+      "title": "Project plan",
+      "description": "Turn a project into a Milanote board: goal & scope, milestones with tasks, backlog, this week, risks & decisions.",
+      "arguments": [
+        {
+          "name": "project",
+          "description": "The project and what it should deliver",
+          "required": true
+        },
+        {
+          "name": "deadline",
+          "description": "Target date",
+          "required": false,
+          "default": "no fixed date — propose milestones without dates"
+        }
+      ],
+      "text": "Plan this project as a Milanote board:\n\n{{project}}\n\nDeadline: {{deadline}}\n\n{{snippet:workflow}}\n\nMilestones must be to-do lists with concrete, checkable tasks; the backlog holds everything else; \"This week\" gets the 3–6 tasks to start now. Structure (the `project_plan` template — replace the descriptive text):\n\n{{template:project_plan}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "meeting_notes",
+      "title": "Meeting notes",
+      "description": "Organise raw meeting notes into a Milanote board: agenda, discussion, decisions, action items, follow-ups.",
+      "arguments": [
+        {
+          "name": "meeting",
+          "description": "Meeting name or topic",
+          "required": true
+        },
+        {
+          "name": "notes",
+          "description": "The raw notes to organise (paste them)",
+          "required": true
+        }
+      ],
+      "text": "Organise these raw notes from \"{{meeting}}\" into a Milanote board:\n\n{{notes}}\n\n{{snippet:workflow}}\n\nKeep the original wording where it matters, do not invent decisions or actions that are not in the notes, and put every action item in the to-do list with its owner and due date when the notes give them. Structure (the `meeting_notes` template — replace the descriptive text):\n\n{{template:meeting_notes}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "weekly_plan",
+      "title": "Weekly plan",
+      "description": "Create a weekly plan board in Milanote: top outcomes plus a to-do list per weekday.",
+      "arguments": [
+        {
+          "name": "focus",
+          "description": "What the week is about, and anything already scheduled",
+          "required": true
+        },
+        {
+          "name": "week",
+          "description": "Which week (e.g. 'Sep 21')",
+          "required": false,
+          "default": "this week"
+        }
+      ],
+      "text": "Create a weekly plan board in Milanote.\n\nWeek: {{week}}\nFocus and known commitments: {{focus}}\n\n{{snippet:workflow}}\n\nSpread the work realistically over the weekdays (3–5 tasks a day, hardest first), keep the top-3 outcomes tied to the focus, and leave Friday room for review. Structure (the `weekly_plan` template — replace the descriptive text):\n\n{{template:weekly_plan}}\n\n{{snippet:outline_format}}"
+    },
+    {
+      "name": "summarize_board",
+      "title": "Summarize a board",
+      "description": "Read a Milanote board and give a structured summary with open questions and suggested next steps.",
+      "arguments": [
+        {
+          "name": "board",
+          "description": "Board title (or part of it), or a board id",
+          "required": true
+        }
+      ],
+      "text": "Summarize the Milanote board \"{{board}}\".\n\n{{snippet:find_board}}\nThen read it with milanote_export_board (the outline keeps columns and notes in order).\n\nReply with: a two-sentence overview; the main points per column; the open questions and unchecked tasks you found; three suggested next steps. Quote the board's own wording where it matters and do not invent content that is not on the board. Offer to add the next steps to the board as a to-do list (milanote_create_todo_list on the board) — only do it if the user says yes."
+    },
+    {
+      "name": "organize_board",
+      "title": "Organize a board",
+      "description": "Propose a tidier structure for a messy board (columns for loose notes), then apply it once the user approves.",
+      "arguments": [
+        {
+          "name": "board",
+          "description": "Board title (or part of it), or a board id",
+          "required": true
+        }
+      ],
+      "text": "Help tidy the Milanote board \"{{board}}\".\n\n{{snippet:find_board}}\nRead it with milanote_get_board — you need the element ids.\n\n1. Propose a structure: which columns to create and which existing notes go where (name them by their first line), plus anything that looks like a duplicate. Show this as a short plan and WAIT for the user's approval — move nothing yet.\n2. Once approved: create the columns with milanote_create_column, then move each note with milanote_move_element (parentId = the column id). Never trash anything unless the user explicitly asks; if they do, use milanote_trash_element (recoverable from Milanote's trash).\n3. Finish with the board link and a list of what changed."
+    },
+    {
+      "name": "notes_to_tasks",
+      "title": "Turn notes into tasks",
+      "description": "Extract the concrete actions from a board's notes into a to-do list on that board.",
+      "arguments": [
+        {
+          "name": "board",
+          "description": "Board title (or part of it), or a board id",
+          "required": true
+        }
+      ],
+      "text": "Turn the notes on the Milanote board \"{{board}}\" into a to-do list.\n\n{{snippet:find_board}}\nRead it with milanote_export_board.\n\n1. Extract every concrete action (things someone has to do; skip ideas and facts). Write each as a short imperative sentence in the board's own wording; add an owner or deadline only when the board states one. Keep the board's order.\n2. Show the list to the user and wait for their confirmation.\n3. When confirmed, create it with milanote_create_todo_list (parentId = the board id, title \"Action items\"), then reply with the board link."
+    }
+  ],
+  "templates": {
+    "gdd": {
+      "title": "Game design document",
+      "description": "A complete GDD: overview, gameplay, content, presentation, technical, production, references.",
+      "variables": [
+        {
+          "name": "game",
+          "description": "The game (name, optionally a one-line pitch)"
+        },
+        {
+          "name": "platform",
+          "description": "Target platform / engine (Roblox, Unity, Unreal, web, ...)"
+        }
+      ],
+      "outline": "# {{game}} — Game Design Document\nOne paragraph on {{game}}: what it is, who it is for and why it will be fun. Platform / engine: {{platform}}.\n\n## 1 · Overview\n### Elevator pitch\nTwo or three sentences that sell the game.\n### Design pillars\n- **Pillar 1** — one line on what it means for every decision\n- **Pillar 2** — …\n- **Pillar 3** — …\n### Goals & non-goals\n**Goals (v1)**\n- …\n**Non-goals (v1)**\n- …\n### Audience & platform\n- Who plays it, session length, platform / engine ({{platform}}), input methods\n\n## 2 · Gameplay\n### Core loop\nTitle → Play → … → Result → Play again. What pulls the player back in?\n### Mechanics\n- Mechanic — how it works, why it is fun, how it interacts with the others\n### Controls\n- Input → action (keyboard / mouse / touch / gamepad)\n### Progression & economy\n- What the player earns, unlocks and upgrades; how difficulty ramps\n\n## 3 · Content\n### Characters\n- Playable and non-playable characters, their roles and fantasy\n### Levels / world\n- Spaces, their purpose, how the player moves between them\n### Enemies & challenges\n- Threats, puzzles, bosses; what each one teaches\n\n## 4 · Presentation\n### Art direction\n- Style, palette, references, silhouette rules\n### Audio\n- Music direction, key sound effects, voice\n### UI / UX\n- Screen flow, HUD, feedback (\"juice\"), accessibility\n\n## 5 · Technical\n### Architecture\n- Modules and how they talk; server vs client; what is pure and testable\n### Data & saves\n- What persists, where, how it is versioned\n### Performance targets\n- Frame rate, memory, load times, minimum devices\n\n## 6 · Production\n### Milestones\n- [ ] M1 — playable core\n- [ ] M2 — content complete\n- [ ] M3 — polish & release\n### Risks\n- Risk — likelihood, impact, mitigation\n### Open questions\n- Question — who decides, by when\n\n## 7 · References\n### How to add references\nEach reference goes in its own bare ### section as a URL with a short caption — Milanote turns it into a preview card.\n"
+    },
+    "character_sheet": {
+      "title": "Character sheet",
+      "description": "A game character from concept to production: identity, visual design, gameplay role, moveset, animations, tasks.",
+      "variables": [
+        {
+          "name": "character",
+          "description": "The character's name"
+        },
+        {
+          "name": "game",
+          "description": "The game the character belongs to"
+        }
+      ],
+      "outline": "# {{character}} — Character Sheet\nWho {{character}} is in one paragraph: role in {{game}}, fantasy, what makes them memorable.\n\n## 1 · Concept\n### Identity\n- Name, age / origin, one-line description\n- Role in the game (playable / boss / ally / vendor)\n### Personality\n- Three traits and how each shows in animation, dialogue and play\n### Backstory\n- The two or three beats that matter for the game; leave the rest out\n\n## 2 · Visual design\n### Silhouette & colours\n- Readable from a distance: shape language, primary / secondary colours\n### Outfit & props\n- Signature items, what can be customised\n### How to add references\nEach reference image or page goes in its own bare ### section as a URL — Milanote shows a preview card.\n\n## 3 · Gameplay\n### Role & archetype\n- Rusher / zoner / grappler / support …; strengths, weaknesses, counters\n### Stats\n- Health, speed, damage, defence … relative to the roster (low / mid / high)\n### Moveset\n- [ ] Light attack — description, startup / recovery, damage\n- [ ] Heavy attack — …\n- [ ] Special 1 — …\n- [ ] Special 2 — …\n- [ ] Ultimate — …\n### Combos & specials\n- Bread-and-butter combo, mix-ups, what the player learns first\n\n## 4 · Presentation\n### Animations\n- [ ] Idle, walk, run, jump\n- [ ] One animation per attack\n- [ ] Hit reactions, block, KO\n- [ ] Victory / taunt\n### VFX & SFX\n- Signature effects and sounds for each special\n### Voice lines\n- Intro, taunt, victory, defeat; tone and delivery\n\n## 5 · Production\n### Tasks\n- [ ] Concept art approved\n- [ ] Model & rig\n- [ ] Moveset prototyped\n- [ ] Balance pass\n### Open questions\n- Question — who decides\n"
+    },
+    "level_design": {
+      "title": "Level design",
+      "description": "A level or arena: purpose, layout and flow, encounters, art & audio, blockout tasks and playtest checklist.",
+      "variables": [
+        {
+          "name": "level",
+          "description": "The level / arena name"
+        },
+        {
+          "name": "game",
+          "description": "The game it belongs to"
+        }
+      ],
+      "outline": "# {{level}} — Level Design\nWhat {{level}} is for in one paragraph: the fantasy, the player's goal and where it sits in {{game}}.\n\n## 1 · Overview\n### Purpose & fantasy\n- What the player should feel; what this level teaches or tests\n### Setting\n- Place, time of day, weather, mood\n### Player goals\n- Main objective, optional objectives, exit condition\n\n## 2 · Layout\n### Zones\n- Zone — purpose, size, connections\n### Flow & pacing\n- Intro → build → peak → release; where the player rests\n### Landmarks & navigation\n- What is visible from where; how the player never gets lost\n### Spawn, camera & bounds\n- Spawn points, camera rules, out-of-bounds handling\n\n## 3 · Gameplay\n### Encounters\n- Encounter — enemies / players, setup, intended solution\n### Hazards & interactables\n- Traps, moving parts, breakables, pickups\n### Difficulty curve\n- How challenge ramps inside the level and compared with the previous one\n\n## 4 · Art & audio\n### Palette & lighting\n- Colours, key light, fog / post effects\n### Props\n- [ ] Hero props (unique)\n- [ ] Set dressing (kit)\n- [ ] Skybox / backdrop\n### Ambience & music\n- Loops, stingers, spatial sounds\n\n## 5 · Production\n### Blockout tasks\n- [ ] Greybox layout\n- [ ] Playable path\n- [ ] Encounter pass\n- [ ] Art pass\n- [ ] Polish & optimisation\n### Playtest checklist\n- [ ] A new player finds the objective within 30 seconds\n- [ ] No dead ends without a reward\n- [ ] Frame rate holds on the minimum device\n### Open questions\n- Question — who decides\n"
+    },
+    "brainstorm": {
+      "title": "Brainstorm",
+      "description": "Ideas, questions, constraints, wild cards and next steps for a topic.",
+      "variables": [
+        {
+          "name": "topic",
+          "description": "What the brainstorm is about"
+        }
+      ],
+      "outline": "# Brainstorm — {{topic}}\nThe question this session answers about {{topic}}, and what a good outcome looks like.\n\n## Ideas\n### Idea 1\nOne idea per note: what it is and why it might work.\n### Idea 2\n…\n### Idea 3\n…\n\n## Questions\n### What we do not know yet\n- Question — how we could find out\n\n## Constraints\n### Hard constraints\n- Time, budget, platform, audience, must-haves\n### Nice-to-haves\n- …\n\n## Wild cards\n### Bold options\n- The version that is too ambitious, and the version that is embarrassingly simple\n\n## Next steps\n### Actions\n- [ ] Decide which ideas to prototype\n- [ ] Assign owners\n- [ ] Set a date to review\n"
+    },
+    "moodboard": {
+      "title": "Mood board",
+      "description": "Direction, colour & light, shapes & materials, references and do/don't for a visual theme.",
+      "variables": [
+        {
+          "name": "theme",
+          "description": "The theme or project the mood board is for"
+        }
+      ],
+      "outline": "# {{theme}} — Mood Board\nThe feeling in one sentence, and where it will be used.\n\n## Direction\n### Vibe\n- Three adjectives; and what it is not\n### Keywords\n- Search terms and references to explore\n\n## Colour & light\n### Palette\n- Primary, secondary, accent (hex if known); light vs dark surfaces\n### Lighting & atmosphere\n- Time of day, contrast, fog / glow / grain\n\n## Shapes & materials\n### Shape language\n- Round vs angular, density, proportions\n### Materials & textures\n- Surfaces, wear, patterns\n### Typography & UI\n- Type style, weight, iconography\n\n## References\n### How to add references\nEach reference goes in its own bare ### section as a URL with a short caption — Milanote shows a preview card.\n\n## Do / Don't\n### Do\n- …\n### Don't\n- …\n"
+    },
+    "project_plan": {
+      "title": "Project plan",
+      "description": "Goal & scope, milestones, backlog, this week, risks & decisions.",
+      "variables": [
+        {
+          "name": "project",
+          "description": "The project name"
+        },
+        {
+          "name": "deadline",
+          "description": "The target date"
+        }
+      ],
+      "outline": "# {{project}} — Plan\nWhat {{project}} delivers, for whom, and by when ({{deadline}}).\n\n## Goal & scope\n### Goal\n- The one outcome that defines success\n### In scope\n- …\n### Out of scope\n- …\n\n## Milestones\n### M1 — Foundations\n- [ ] …\n### M2 — Feature complete\n- [ ] …\n### M3 — Ship ({{deadline}})\n- [ ] …\n\n## Backlog\n### Backlog\n- [ ] …\n\n## This week\n### This week\n- [ ] …\n\n## Risks & decisions\n### Risks\n- Risk — likelihood, impact, mitigation\n### Decisions log\n- Date — decision — why\n### Open questions\n- Question — owner — needed by\n"
+    },
+    "meeting_notes": {
+      "title": "Meeting notes",
+      "description": "Agenda, discussion, decisions, action items and follow-ups.",
+      "variables": [
+        {
+          "name": "meeting",
+          "description": "The meeting name or topic"
+        }
+      ],
+      "outline": "# {{meeting}} — Notes\nDate, attendees and the purpose of the meeting in two lines.\n\n## Agenda\n### Agenda\n1. …\n2. …\n\n## Discussion\n### Topic 1\n- Key points, options considered\n### Topic 2\n- …\n\n## Decisions\n### Decided\n- Decision — rationale — who owns it\n\n## Action items\n### Actions\n- [ ] Action — owner — due date\n\n## Follow-ups\n### Parking lot\n- Raised but not resolved; when it will be revisited\n"
+    },
+    "weekly_plan": {
+      "title": "Weekly plan",
+      "description": "Top outcomes for the week plus a to-do list per weekday.",
+      "variables": [
+        {
+          "name": "week",
+          "description": "Which week (e.g. 'Sep 21')"
+        },
+        {
+          "name": "focus",
+          "description": "The main focus for the week"
+        }
+      ],
+      "outline": "# Week of {{week}} — Plan\nFocus for the week: {{focus}}\n\n## Focus\n### Top 3 outcomes\n1. …\n2. …\n3. …\n\n## Monday\n### Monday\n- [ ] …\n\n## Tuesday\n### Tuesday\n- [ ] …\n\n## Wednesday\n### Wednesday\n- [ ] …\n\n## Thursday\n### Thursday\n- [ ] …\n\n## Friday\n### Friday\n- [ ] …\n\n## Notes\n### Parking lot\n- Ideas and loose ends to sort later\n"
+    }
+  },
+  "snippets": {
+    "workflow": "Work like this:\n1. Call milanote_whoami first. If it reports \"Not signed in\", call milanote_login, ask the user to sign in in the window that opens, then retry. Look at `usage`: if the free-plan headroom is too small for what you are about to build, say so before building.\n2. Write the WHOLE board as one Markdown outline in the Milanote++ outline format and create it with ONE milanote_build_board call. Build it inside the user's Home board unless they named another board (find ids with milanote_list_boards or milanote_search). Fill every section with specific content for this case — no placeholders, no \"TBD\", no template wording left behind; drop sections that do not apply and add ones that do. Keep each note under about 120 words and prefer bullets.\n3. Reply with the board link (the `url` the tool returns), a short summary of the key points, and one question about what to go deeper on.",
+    "outline_format": "Outline format reminder: `# Title` creates the sub-board (plain text right under it becomes the title note); `## Column` starts a column; `### Heading` starts a note that runs until the next ### / ##; a ### section whose lines are all `- [ ] task` becomes a to-do list; a bare `###` followed by a URL (plus optional caption) becomes a link card. Notes accept light Markdown (bullets, **bold**, *italic*, `code`, > quotes).",
+    "find_board": "Find the board first: call milanote_whoami, then, if the name looks like a 14-character id, use it directly; otherwise call milanote_list_boards (depth 4) and pick the best title match — if several boards match, ask which one before doing anything."
+  }
+}

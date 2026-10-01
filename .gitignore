@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+x64/
+Win32/
+Debug/
+Release/
+*.user
+*.suo
+*.aps
+*.VC.db
+*.VC.opendb
+# NuGet (restored on build)
+packages/
+# build / test / diagnostics output (may contain account details)
+*.log
+*.err
+diag-*
+mcp-test.*
+icon-1024.png
+github-remote.txt
+release/
+# local helper scripts and test inputs - tools for this machine, not part of the project
+*.cmd
+*.jsonl
